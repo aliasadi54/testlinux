@@ -3,7 +3,7 @@ pkgver=1.0
 pkgrel=1
 pkgdesc="Darkbolt cursor theme for Plasma"
 arch=('any')
-url="https://github.com/pdlinux/pdlinux_packages/tree/main/src/$pkgnamer"
+url="https://github.com/pdlinux/$pkgname"
 license=('GPL')
 depends=('hicolor-icon-theme')  # This is a common dependency for themes
 source=("git+${url}.git")
@@ -20,6 +20,6 @@ package() {
     # Copy the cursor theme files to the appropriate system directory
     cp -r "$srcdir/${pkgname}"/* "$pkgdir/usr/share/icons/$pkgname/"
     
-    install -Dm644 "${srcdir}/${pkgname}/COPYING" "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
+   # install -Dm644 "${srcdir}/${pkgname}/COPYING" "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
 }
 
