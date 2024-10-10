@@ -1,0 +1,18 @@
+pkgname=Darkbolt-cursor-theme
+pkgver=1.0
+pkgrel=1
+pkgdesc="Darkbolt cursor theme for Plasma"
+arch=('any')
+url="https://github.com/pdlinux/pdlinux_packages/tree/main/src/Darkbolt-cursor"
+license=('GPL')
+depends=('hicolor-icon-theme')  # This is a common dependency for themes
+source=("")
+sha256sums=('SKIP')  # You can replace SKIP with the actual checksum, if desired
+
+package() {
+    # Create the directory where the cursor theme will be installed
+    install -d "$pkgdir/usr/share/icons/$pkgname"
+    
+    # Copy the cursor theme files to the appropriate system directory
+    cp -r "$srcdir/Darkbolt-cursor-theme"/* "$pkgdir/usr/share/icons/$pkgname/"
+}
